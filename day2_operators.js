@@ -62,9 +62,9 @@ console.log(
 let result =
   someNum >= 0
     ? someNum === 0
-      ? "zero" // Will return string zero
-      : "positive" // Will return string positive
-    : "negative"; // Will return string negative
+      ? "zero" // Will return string "zero"
+      : "positive" // Will return string "positive"
+    : "negative"; // Will return string "negative"
 
 console.log(result); // This will only log "negative"
 
