@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: aliceblue;
+        }
+
+        .imgAndButton {
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            border: 10px solid red;
+        }
+
+        .stylingOfTodoList {
+            border: 10px solid;
+            /* Adjust the border width */
+            border-image: linear-gradient(to right, yellow, orange) 1;
+            padding: 10px;
+            /* Optional: Adjust padding as needed */
+        }
+
+        .widthOfTodoList {
+            width: fit-content;
+        }
+        .visibilityClass {
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="greetHello">
+        Hello Josh.
+    </p>
+    <div class="greetMorning">
+        <h1 id="goodMorning" >Good Morning</h1>
+        <button id="goodMorningBtn" >Click here to see greeting in different language</button>
+    </div>
+    <ul id="synonymsOfHandsome">
+        <li>Handsome</li>
+        <li>Pretty</li>
+        <li>Charming</li>
+    </ul>
+    <div class="imgAndButton">
+        <img id="Horror_Img" class="" src="../day9_DOMmanipulation/controlsBgImg.jpg" style="height: 300px;" alt="Horror_Img">
+        <button id="clickToChangeImg">Cick here to change image!</button>
+    </div>
+    <div>
+        <div id="divForBorderToggle" class="stylingOfTodoList widthOfTodoList">
+            <img id="todoListImage" src="../day9_DOMmanipulation/todoListBGimg.jpg" alt="todoList" style="height: 300px;">
+        </div>
+        <button id="borderToggleBtn">Click me to toggle border!</button>
+    </div>
+    <input id="inputBox" type="text">
+    <input id="inputBoxSecond" type="text">
+    <form id="formElement">
+        <input type="text">
+        <button>Submit</button>
+    </form>
+
+    <!-- Task-8 -->
+
+    <label for="mySelect">Choose an option:</label>
+    <!-- Note: for="mySelect": This associates the above label with the <select> element that has the id="mySelect". -->
+    <select id="mySelect">
+        <option value="Option 1">Option 1</option>
+        <option value="Option 2">Option 2</option>
+        <option value="Option 3">Option 3</option>
+    </select>
+    
+    <p id="selectedValue">Selected value from above select options will appear here.</p>
+
+    <!-- Task-9 -->
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+    </ul>
+
+    <!-- Task-10 -->
+    <ul id="parentList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <button id="addItem">Add Item</button>
+
+</body>
+<script src="./day_10_EventHandling.js"></script>
+
+</html>

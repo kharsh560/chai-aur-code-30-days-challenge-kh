@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+            color: aliceblue;
+        }
+        .imgAndButton {
+            display: flex;
+            flex-direction: column;
+            width: fit-content;
+            border: 10px solid red;
+        }
+        .stylingOfTodoList{
+      border: 10px solid; /* Adjust the border width */
+      border-image: linear-gradient(to right, yellow, orange) 1;
+      padding: 10px; /* Optional: Adjust padding as needed */
+    }
+    
+    .widthOfTodoList {
+        width: fit-content;
+    }
+    </style>
+</head>
+<body>
+    <p id="greetHello">
+        Hello Josh.
+    </p>
+    <div class="greetMorning">
+        <h1>Good Morning</h1>
+    </div>
+    <ul id="synonymsOfHandsome">
+        <li>Handsome</li>
+        <li>Pretty</li>
+        <li>Charming</li>
+    </ul>
+    <div class="imgAndButton">
+        <img id="Horror_Img" src="./controlsBgImg.jpg" style="height: 300px;" alt="Horror_Img">
+        <button id="clickToChangeImg" >Cick here to change image!</button>
+    </div>
+    <div>
+        <div id="divForBorderToggle" class="stylingOfTodoList widthOfTodoList">
+            <img id="todoListImage" src="./todoListBGimg.jpg" alt="todoList" style="height: 300px;">
+        </div>
+        <button id="borderToggleBtn" >Click me to toggle border!</button>
+    </div>
+</body>
+<script src="./day9_DOMmanipulation.js"></script>
+</html>
