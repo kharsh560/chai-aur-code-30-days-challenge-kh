@@ -1,1 +1,1 @@
-Sunday
+arrOne.length - 1
