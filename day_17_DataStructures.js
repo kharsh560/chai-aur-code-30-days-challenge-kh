@@ -38,6 +38,25 @@ class LinkedList {
     }
   }
 
+  removeFromEnd() {
+    // Handle the empty list case
+    if (!this.head) {
+      console.log("List is already empty");
+      return;
+    }
+
+    // Handle the case when there's only one node
+    if (!this.head.next) {
+      this.head = null;
+      return;
+    }
+    let current = this.head;
+    while (current.next.next !== null) {
+      current = current.next;
+    }
+    current.next = null;
+  }
+
   displayAll() {
     let current = this.head;
     const values = [];
@@ -57,3 +76,84 @@ list1.addToEnd(7);
 list1.addToEnd(6);
 list1.addToEnd(2);
 list1.displayAll();
+list1.removeFromEnd();
+list1.displayAll();
+list1.removeFromEnd();
+list1.displayAll();
+list1.removeFromEnd();
+list1.displayAll();
+list1.removeFromEnd();
+list1.displayAll();
+list1.removeFromEnd();
+list1.displayAll();
+
+// task-3
+// Implementing Stack:-
+
+class stack {
+  // It will define and input the first element in the stack.
+  // No, don't do like this. In constructor fxn just define the array!
+  constructor() {
+    this.stackArr = [];
+    // this.stackArr.push(value);
+  }
+
+  pushOperation(value) {
+    this.stackArr.push(value);
+  }
+
+  popOperation() {
+    this.stackArr.pop();
+  }
+
+  peekOperation() {
+    if (this.stackArr.length == 0) {
+      return "Empty stack!";
+    } else {
+      return this.stackArr[this.stackArr.length - 1];
+    }
+  }
+
+  displayAllElementsOfStack() {
+    if (this.stackArr.length == 0) {
+      return "Empty stack!";
+    } else {
+      let tempStr = "";
+      this.stackArr.forEach(
+        (eachElement) => (tempStr = tempStr + eachElement + " ")
+      );
+      // return this.stackArr.forEach((eachEle) => eachEle);
+      return tempStr;
+    }
+  }
+}
+
+const stackOne = new stack();
+console.log(stackOne.displayAllElementsOfStack());
+stackOne.pushOperation(23);
+stackOne.pushOperation(29);
+stackOne.pushOperation(45);
+stackOne.pushOperation(67);
+stackOne.pushOperation(20);
+console.log(stackOne.displayAllElementsOfStack());
+console.log(stackOne.peekOperation());
+stackOne.popOperation();
+console.log(stackOne.displayAllElementsOfStack());
+console.log(stackOne.peekOperation());
+
+// Task-4
+let strToRev = "MadaN";
+const stackTwo = new stack();
+for (let i = 0; i < strToRev.length; i++) {
+  stackTwo.pushOperation(strToRev[i]);
+}
+let reversedStr = "";
+// stackTwo.stackArr.forEach((eachEle) => (
+//   reversedStr = reversedStr + stackTwo.peekOperation();
+//   stackTwo.pop();
+// ))
+while (stackTwo.stackArr.length>0) {
+  reversedStr = reversedStr + stackTwo.peekOperation();
+  stackTwo.popOperation();
+}
+console.log(reversedStr);
