@@ -157,3 +157,31 @@ while (stackTwo.stackArr.length>0) {
   stackTwo.popOperation();
 }
 console.log(reversedStr);
+
+// Task-5
+class myQueue {
+  constructor () {
+    this.queueArray = [];
+  }
+
+  enqueue (value) {
+    if (this.queueArray.length == 0) {
+      this.queueArray.push(value);
+    }
+    else {
+      this.queueArray.unshift(value);
+    }
+  }
+
+  displayAll () {
+    this.queueArray.forEach((eachElement) => {
+      
+    })
+  }
+}
+
+const myQueueOne = new myQueue();
+myQueueOne.enqueue(2);
+myQueueOne.enqueue(12);
+myQueueOne.enqueue(17);
+myQueueOne.enqueue(19);
