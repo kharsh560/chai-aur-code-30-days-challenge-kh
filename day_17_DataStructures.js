@@ -152,7 +152,7 @@ let reversedStr = "";
 //   reversedStr = reversedStr + stackTwo.peekOperation();
 //   stackTwo.pop();
 // ))
-while (stackTwo.stackArr.length>0) {
+while (stackTwo.stackArr.length > 0) {
   reversedStr = reversedStr + stackTwo.peekOperation();
   stackTwo.popOperation();
 }
@@ -160,23 +160,46 @@ console.log(reversedStr);
 
 // Task-5
 class myQueue {
-  constructor () {
+  constructor() {
     this.queueArray = [];
   }
 
-  enqueue (value) {
+  enqueue(value) {
     if (this.queueArray.length == 0) {
       this.queueArray.push(value);
-    }
-    else {
-      this.queueArray.unshift(value);
+    } else {
+      // this.queueArray.unshift(value); // It prepends the "value" in the front of the array and shifts rest of the array!
+      this.queueArray.push(value);
     }
   }
 
-  displayAll () {
-    this.queueArray.forEach((eachElement) => {
-      
-    })
+  dequeue() {
+    if (this.queueArray.length == 0) {
+      return "Queue Already Empty!";
+    } else {
+      this.queueArray.shift();
+      //It technically shifts the elements to the left and hence returns the leftmost element (first element).
+    }
+  }
+
+  front() {
+    if (this.queueArray.length == 0) {
+      return "Queue Already Empty!";
+    } else {
+      return this.queueArray[0];
+    }
+  }
+
+  displayAll() {
+    if (this.queueArray.length == 0) {
+      return "Empty Queue!";
+    } else {
+      let tempStr = "";
+      this.queueArray.forEach(
+        (eachElement) => (tempStr = tempStr + eachElement + " ")
+      );
+      return tempStr;
+    }
   }
 }
 
@@ -185,3 +208,29 @@ myQueueOne.enqueue(2);
 myQueueOne.enqueue(12);
 myQueueOne.enqueue(17);
 myQueueOne.enqueue(19);
+console.log(myQueueOne.displayAll());
+myQueueOne.dequeue();
+console.log(myQueueOne.displayAll());
+myQueueOne.dequeue();
+console.log(myQueueOne.displayAll());
+myQueueOne.enqueue(67);
+myQueueOne.enqueue(98);
+myQueueOne.enqueue(23);
+console.log(myQueueOne.displayAll());
+console.log(myQueueOne.front());
+
+// Task-6
+const printerSimulation = new myQueue();
+printerSimulation.enqueue("task1");
+printerSimulation.enqueue("task2");
+printerSimulation.enqueue("task3");
+printerSimulation.enqueue("task4");
+console.log(printerSimulation.displayAll());
+function print() {
+  console.log(`Printed the ${printerSimulation.front()}`);
+  printerSimulation.dequeue();
+  console.log(`Left out tasks:- `);
+  console.log(printerSimulation.displayAll());
+  printerSimulation.dequeue();
+}
+print();
